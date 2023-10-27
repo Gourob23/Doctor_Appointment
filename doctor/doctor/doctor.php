@@ -72,10 +72,10 @@ function sendEmail($patientEmail, $options, $name, $desig, $date, $slot)
   try {
     $mail->SMTPDebug = 2;
     $mail->isSMTP();
-    $mail->Host = 'mail.teamrabbil.com';
+    $mail->Host = 'hostname';
     $mail->SMTPAuth = true;
-    $mail->Username = 'info@teamrabbil.com';
-    $mail->Password = '~sR4[bhaC[Qs';
+    $mail->Username = 'host_username';
+    $mail->Password = 'host_password';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
@@ -87,7 +87,7 @@ function sendEmail($patientEmail, $options, $name, $desig, $date, $slot)
       )
     );
 
-    $mail->setFrom('info@teamrabbil.com', 'Mailer');
+    $mail->setFrom('host_username', 'Mailer');
     $mail->addAddress($patientEmail);
     $mail->isHTML(true);
     $mail->Subject = 'Here is the subject';
